@@ -1,0 +1,23 @@
+---
+- name: Dev tools
+  sudo: yes
+  apt: name={{item}} state=latest
+  with_items:
+    - git
+    - gitk
+    - wget
+    - curl
+    - build-essential
+    - python-pip
+    - imagemagick
+    - htop
+    - lftp
+    - firefox
+    - screen
+    - emacs23-nox
+    - nmap
+    - sysstat
+
+- name: Pip installed dev tools
+  sudo: yes
+  pip: name=httpie

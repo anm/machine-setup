@@ -1,0 +1,24 @@
+---
+- hosts: all
+  remote_user: vagrant
+  vars:
+    home: "/home/vagrant"
+    ruby: 2.1.1
+    perl: perl-5.19.10
+
+  tasks:
+  - name: Copy known_hosts file
+    copy: src=files/known_hosts dest="{{home}}/.ssh/known_hosts" owner="{{ansible_ssh_user}}" group="{{ansible_ssh_user}}"
+
+  - name: Fix apt
+    sudo: yes
+    command: dpkg --configure -a
+
+  - name: Update apt
+    apt: update_cache=yes upgrade=yes cache_valid_time=6000
+    sudo: yes
+
+  - include: dev_tools.yml
+  - include: anm.yml
+  - include: ruby.yml
+  - include: perl.yml

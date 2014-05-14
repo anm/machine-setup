@@ -1,0 +1,6 @@
+---
+- name: Get anm dotfiles
+  git: repo=git@github.com:anm/dotfiles.git dest={{home}}/dotfiles
+
+- name: Install anm dotfiles
+  shell: "cd dotfiles; ./install.sh"

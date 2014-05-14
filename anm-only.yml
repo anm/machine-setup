@@ -1,0 +1,13 @@
+---
+- hosts: all
+  remote_user: vagrant
+  vars:
+    home: "/home/vagrant"
+    ruby: 2.1.1
+    perl: perl-5.19.10
+
+  tasks:
+  - name: Copy known_hosts file
+    copy: src=files/known_hosts dest="{{home}}/.ssh/known_hosts" owner="{{ansible_ssh_user}}" group="{{ansible_ssh_user}}"
+
+  - include: anm.yml

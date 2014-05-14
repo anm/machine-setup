@@ -1,0 +1,19 @@
+- name: Laptop / workstation packages
+  sudo: yes
+  apt: name={{item}} state=latest
+  with_items:
+    - jupiter
+    - lm-sensors
+    - mutt
+    - postfix
+    - pidgin
+    - vlc
+    - irssi
+    - chromium-browser
+    - dropbox
+
+- name: Remove rhythmbox
+  sudo: yes
+  apt: name=rhythmbox state=absent
+
+# shell: cd /tmp; wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb; dpkg -i google-chrome-stable_current_amd64.deb

@@ -1,0 +1,16 @@
+---
+- name: Perl dev environment
+  sudo: yes
+  apt: name={{item}} state=latest
+  with_items:
+    - perlbrew
+    - cpanminus
+
+- name: Init perlbrew
+  shell: perlbrew init creates={{home}}/perl5/perlbrew/Config.pm
+
+- name: Install perl with perlbrew
+  shell: perlbrew install {{perl}} -j 8; perlbrew switch {{perl}} creates=perl5/perlbrew/perls/{{perl}}/bin/perl
+
+- name: Carton
+  cpanm: name=Carton

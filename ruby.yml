@@ -1,0 +1,9 @@
+---
+- name: RVM
+  shell: \curl -L https://get.rvm.io > rvm-installer; bash -s stable < rvm-installer --autolibs=3 creates=~/.rvm
+
+- name: Avoid rvm asking to su
+  shell: rvm autolibs disable
+
+- name: Install ruby with rvm
+  shell: ~/.rvm/bin/rvm install --default {{ ruby }} creates=~/.rvm/rubies/{{ ruby }}
