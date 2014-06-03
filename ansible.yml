@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  remote_user: vagrant
   vars:
-    home: "/home/vagrant"
+    user: "{{ansible_ssh_user}}"
+    home: "/home/{{user}}"
     ruby: 2.1.1
     perl: perl-5.19.10
 
@@ -20,5 +20,6 @@
 
   - include: dev_tools.yml
   - include: anm.yml
+  - include: anm-laptop.yml
   - include: ruby.yml
   - include: perl.yml

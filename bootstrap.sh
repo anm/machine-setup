@@ -1,4 +1,4 @@
-sudo apt-get install git python-pip python-jinja2 python-yaml
+sudo apt-get install git python-pip python-jinja2 python-yaml openssh-server
 
 # Vagrant in ubuntu is too old
 wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.2_x86_64.deb

@@ -2,7 +2,7 @@
   sudo: yes
   apt: name={{item}} state=latest
   with_items:
-    - jupiter
+#    - jupiter
     - lm-sensors
     - mutt
     - postfix
@@ -13,7 +13,19 @@
     - dropbox
 
 - name: Remove rhythmbox
-  sudo: yes
   apt: name=rhythmbox state=absent
+  sudo: yes
 
-# shell: cd /tmp; wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb; dpkg -i google-chrome-stable_current_amd64.deb
+- name: Download Google Chrome
+  shell: wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+- name: Install Google Chrome
+  shell: dpkg -i chrome.deb
+  sudo: yes
+
+- name: Download Dropbox package
+  shell: wget -O dropbox.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_1.6.0_amd64.deb
+
+- name: Install Dropbox
+  command: dpkg -i dropbox.deb
+  sudo: yes

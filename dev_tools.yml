@@ -21,3 +21,9 @@
 - name: Pip installed dev tools
   sudo: yes
   pip: name=httpie
+
+- name: ~/bin
+  file: path={{home}}/bin state=directory
+
+- name: ack
+  shell: curl http://beyondgrep.com/ack-2.12-single-file > ~/bin/ack && chmod 0755 ~/bin/ack
