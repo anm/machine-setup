@@ -19,7 +19,7 @@
     sudo: yes
 
   - include: dev_tools.yml
+  - include: ruby.yml
   - include: anm.yml
   - include: anm-laptop.yml
-  - include: ruby.yml
   - include: perl.yml

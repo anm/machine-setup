@@ -9,8 +9,6 @@
     - pidgin
     - vlc
     - irssi
-    - chromium-browser
-    - dropbox
 
 - name: Remove rhythmbox
   apt: name=rhythmbox state=absent
