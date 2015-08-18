@@ -1,4 +1,7 @@
 ---
+- name: Get RVM signing key
+  shell: gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+
 - name: RVM
   shell: \curl -L https://get.rvm.io > rvm-installer; bash -s stable < rvm-installer --autolibs=3 creates=~/.rvm
 
