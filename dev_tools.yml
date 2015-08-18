@@ -14,7 +14,7 @@
     - lftp
     - firefox
     - screen
-    - emacs23-nox
+    - emacs24-nox
     - nmap
     - sysstat
 
@@ -26,4 +26,4 @@
   file: path={{home}}/bin state=directory
 
 - name: ack
-  shell: curl http://beyondgrep.com/ack-2.12-single-file > ~/bin/ack && chmod 0755 ~/bin/ack
+  shell: curl http://beyondgrep.com/ack-2.14-single-file > ~/bin/ack && chmod 0755 ~/bin/ack
