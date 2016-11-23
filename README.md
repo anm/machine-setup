@@ -7,5 +7,5 @@ To use with Vagrant, run ```bootstrap.sh``` to install dependencies,
 then ```vagrant up```, in this directory.
 
 To use on existing machines, put them in the ```hosts``` file,
-set username and homedir in asible.yml, and run
+set username and homedir in ansible.yml, and run
 ```ansible-playbook ansible.yml -K -i hosts```
